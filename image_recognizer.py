@@ -5,11 +5,12 @@ import streamlit as st
 import matplotlib.pyplot as plt
 
 def main():
-    st.title('Image Classifier using Deep Learning') #Title Of Our Website
+    st.title('Image Classifier using Convolutional Neural Network') #Title Of Our Website
     st.write('Upload any image among the classes you want to know that my predciton are true and Accuracy of my model')#Normal text
-    st.write('You can put following pictures to recognize: Airplane ,Automobile, Bird, Cat, Deer, Dog, Frog, Horse, Ship, Truck')
+    st.write('You can put following pictures to recognize: Airplane , Automobile , Bird, Cat, Deer, Dog, Frog, Horse, Ship, Truck')
 #1. Here by using 'fileuplader' You can upload a file by deciding there types such as jpg and other you can also upload pdfs if in any case
-    file =  st.file_uploader("Upload Image here.....",type=['jpg','jpeg','png']) 
+    file =  st.file_uploader("Upload Image here.....",type=['jpg','jpeg','png','webp']) 
+    st.write("developed by aaditya.....")
     if file: #if we have the file the do operations
          image =Image.open(file)# declaring the path of the file which you have uploaded
          st.image(image) #Setting that path we declared in 'st.image'
@@ -35,7 +36,7 @@ def main():
 
          st.pyplot(fig)
          st.write('Accuracy of my model is : ',np.max(predictions[0])*100,'%')
-
+        
     else:
         #if image not uploaded then show this text
         st.text("Not Uploaded Image yet... ")
